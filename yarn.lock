@@ -1898,7 +1898,7 @@ code-point-at@^1.0.0:
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
-code-surfer@^2.0.0-alpha.6:
+code-surfer@2.0.0-alpha.6:
   version "2.0.0-alpha.6"
   resolved "https://registry.yarnpkg.com/code-surfer/-/code-surfer-2.0.0-alpha.6.tgz#bd403ce81f5b51931999c7fdcf206ba92af52028"
   integrity sha512-GuCtK9e+yc6zdjnEeBsR10zBtqSF8sBjnyATCdzWqzhtcZeHEkLE9YDfQmiKDjzN7eXeSGdQb8CeBK1ZOR5ksg==
