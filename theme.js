@@ -1,15 +1,18 @@
 export default {
   primary: {
-    color: 'rgb(48, 255, 37)',
-    medium: 'rgb(41, 223, 31)',
-    dark: 'rgb(36, 193, 28)',
-    light: 'rgb(106, 255, 98)',
-    extraLight: 'rgb(181, 250, 160)'
+    color: 'rgb(164, 84, 255)',
+    medium: 'rgb(115, 31, 212)',
+    dark: 'rgb(88, 23, 163)',
+    light: 'rgb(147, 75, 251)',
+    extraLight: 'rgb(161, 112, 251)'
+  },
+  accent: {
+    color: 'rgb(33, 200, 217)'
   },
   font: '"Hind Siliguri", sans-serif',
   googleFont: 'https://fonts.googleapis.com/css?family=Hind+Siliguri:400,500,600&display=swap',
   colors: {
-    background: 'rgb(40, 43, 45)',
+    background: 'rgb(44, 40, 45)',
     text: 'rgb(255, 255, 255)',
     codeBackground: 'none !important'
   },
