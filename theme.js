@@ -7,7 +7,7 @@ export default {
     extraLight: 'rgb(161, 112, 251)'
   },
   accent: {
-    color: 'rgb(33, 200, 217)'
+    color: 'rgb(49, 252, 216)'
   },
   font: '"Hind Siliguri", sans-serif',
   googleFont: 'https://fonts.googleapis.com/css?family=Hind+Siliguri:400,500,600&display=swap',

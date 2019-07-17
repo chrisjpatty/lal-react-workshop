@@ -10,95 +10,263 @@ import SplitCode from './components/SplitCode'
 import FullsizeSandbox from './components/FullsizeSandbox'
 import vsDark from "./surfTheme";
 import { CodeSurferColumnLayout, Step, Code } from "code-surfer";
+import Big from './components/LargeTitle'
 
 export const themes = [darkTheme, Syntax, vsDark, theme]
 
 import SplashScreen from './components/SplashScreen'
+import ShapesBG from './components/ShapesBG'
 
 <SplashScreen />
 
 ---
 
-# <Hi>What</Hi> is React
+<Notes> As web pages become more dynamic, interactive, and complex, several commmon problems arise</Notes>
 
-# <Hi>Why</Hi> use it
+# Users expect web pages to be<br/><Hi>feature-rich</Hi>,<br/><Hi>fast</Hi>,<br/>and <Hi>highly dynamic</Hi>
 
-# <Hi>How</Hi> to get started
+---
+
+# As web apps get more complicated,<br/>common problems arise:
+
+---
+
+## How do I reuse my code?
+
+<Appear>
+
+## How do I efficiently update the DOM?
+## How do I keep track of the "state" of my app?
+
+</Appear>
 
 ---
 
 import HistorySlide from './components/HistorySlide'
 
+<Notes>Facebook recognized these problems, and invented React to use in their own sites.</Notes>
+
 <HistorySlide />
 
 ---
 
-### React was created to solve a few common problems:
+# Automatic DOM updates (<Hi>virtual DOM</Hi>)
 
-## Disorganized <Hi>application code</Hi>
-## Difficulty <Hi>reusing elements</Hi>
-## Management of <Hi>application state</Hi>
+<Appear>
 
----
+# Reusable code (<Hi>components</Hi>)
+# Declarative syntax (<Hi>JSX</Hi>)
 
-# React is a <Hi>declarative</Hi> framework<br/>for building user interfaces
-
-### Which is easiest to explain by example.
+</Appear>
 
 ---
 
-# <Hi>CSS</Hi> is a good example<br/>of a <Hi>declarative</Hi> language
+<Big style={{transform: 'translateY(15%)'}}>State Managment</Big>
+
+<ShapesBG />
 
 ---
 
-import Css from './examples/Css'
+<Notes>Let's look at a simple web app, Microsoft ToDo</Notes>
 
-<CodeSurferColumnLayout sizes={[1, 2]}>
+<img style={{maxHeight: '95vh'}} src="./img/todo.png" />
+
+---
+
+# A simple app like this has<br/><Hi>a lot</Hi> of possible <Hi>states</Hi>
+
+---
+
+<img src="./img/states.svg" style={{width: '67vw', maxHeight: '95vh'}} />
+
+---
+
+<Notes>119 septendecillion possible permutations of this site.</Notes>
+
+## How many <Hi>possible states</Hi>?
+
+## With at least <Hi>45</Hi> state attributes, there are:
+
+119,622,220,865,480,000,000,000,000,000,000,000,000,000,000,000,000,000,000
+
+## possible permuations of Microsoft ToDo
+
+---
+
+## That's an <Hi>impossible</Hi> number<br/>of possible states to account for<br/>using <Hi>traditional methods</Hi>
+
+<img src="https://media.giphy.com/media/BmmfETghGOPrW/giphy.gif" style={{width: '30vw'}} />
+
+---
+
+# How does <Hi>React</Hi> solve this problem?
+
+<SplashScreen noText />
+
+---
+
+<Notes>It starts with the concept of PURE FUNCTIONS</Notes>
+
+<Big style={{transform: 'translateY(15%)'}}>Pure Functions</Big>
+
+<ShapesBG />
+
+---
+
+<CodeSurferColumnLayout sizes={[1]}>
   <Step>
-    <Css text="I'm a button" />
     <Code
-      code={require("!!raw-loader!./code/css.1.0.css").default}
-      lang="css"
-    />
-  </Step>
-  <Step>
-    <Css text="I'm a button" background='red'/>
-    <Code
-      code={require("!!raw-loader!./code/css.1.1.css").default}
-      lang="css"
-      focus="1:3"
-    />
-  </Step>
-</CodeSurferColumnLayout>
-
----
-
-# Let's look at some equivalent<br/><Hi>imperative</Hi> Javascript code
-
----
-
-<CodeSurferColumnLayout sizes={[1, 2]}>
-  <Step>
-    <Css interactive/>
-    <Code
-      code={require("!!raw-loader!./code/imperative.1.1.js").default}
+      code={require("!!raw-loader!./code/pure.1.0.js").default}
       lang="js"
     />
   </Step>
-</CodeSurferColumnLayout>
-
----
-
-# React makes it easy to <Hi>declaratively</Hi><br/>change web pages using Javascript
-
----
-
-<CodeSurferColumnLayout sizes={[1, 2]}>
   <Step>
-    <Css interactive extra/>
     <Code
-      code={require("!!raw-loader!./code/jsx.1.0.js").default}
-      lang="jsx"
+      code={require("!!raw-loader!./code/pure.1.1.js").default}
+      lang="js"
+      focus="1:5"
+    />
+  </Step>
+  <Step>
+    <Code
+      code={require("!!raw-loader!./code/pure.1.2.js").default}
+      lang="js"
+      focus="1:12"
     />
   </Step>
 </CodeSurferColumnLayout>
+
+---
+
+# React-powered user interfaces are a<br/><Hi>pure function</Hi> of the<br/><Hi>state</Hi> of your application
+
+---
+
+import PureFunctions from './examples/PureFunctions'
+
+<CodeSurferColumnLayout sizes={[2, 1]}>
+  <Step>
+    <Code
+      code={require("!!raw-loader!./code/state.1.0.js").default}
+      lang="json"
+    />
+    <PureFunctions todos={[
+      {text: "Hide the body", done: false},
+      {text: "Blackmail the witnesses", done: true},
+      {text: "Buy a new toaster", done: false}
+    ]} />
+  </Step>
+  <Step>
+    <Code
+      code={require("!!raw-loader!./code/state.1.1.js").default}
+      lang="json"
+      focus="1:7"
+    />
+    <PureFunctions todos={[
+      {text: "Hide the body", done: false},
+      {text: "Blackmail the witnesses", done: true},
+      {text: "Buy a new toaster", done: false},
+      {text: "Practice alibi", done: false}
+    ]} />
+  </Step>
+  <Step>
+    <Code
+      code={require("!!raw-loader!./code/state.1.2.js").default}
+      lang="json"
+      focus="1:8"
+    />
+    <PureFunctions todos={[
+      {text: "Hide the body", done: false},
+      {text: "Blackmail the witnesses", done: true},
+      {text: "Buy a new toaster", done: true},
+      {text: "Practice alibi", done: true}
+    ]} />
+  </Step>
+</CodeSurferColumnLayout>
+
+---
+
+# Your web app "<Hi>Reacts</Hi>"<br/>to changes in your state
+
+<Appear>
+
+# This happens <Hi>automatically</Hi><br/>because of the...
+
+</Appear>
+
+---
+
+<Big style={{transform: 'translateY(15%)'}}>Virtual DOM</Big>
+
+<ShapesBG />
+
+---
+
+import VDomBackground from './components/VDomBackground'
+
+<CodeSurferColumnLayout sizes={[1, 1]}>
+  <Step>
+    <Code
+      code={require("!!raw-loader!./code/vdom.1.0.html").default}
+      lang="html"
+    />
+    <Code
+      code={require("!!raw-loader!./code/vdom.1.0.html").default}
+      lang="html"
+    />
+  </Step>
+  <Step>
+    <Code
+      code={require("!!raw-loader!./code/vdom.1.1.html").default}
+      lang="html"
+      focus="1:18"
+    />
+    <Code
+      code={require("!!raw-loader!./code/vdom.1.0.html").default}
+      lang="html"
+      focus="1:14"
+    />
+  </Step>
+  <Step>
+    <Code
+      code={require("!!raw-loader!./code/vdom.1.1.html").default}
+      lang="html"
+      focus="1:18"
+    />
+    <Code
+      code={require("!!raw-loader!./code/vdom.1.1.html").default}
+      lang="html"
+      focus="1:18"
+    />
+  </Step>
+  <Step>
+    <Code
+      code={require("!!raw-loader!./code/vdom.1.2.html").default}
+      lang="html"
+      focus="1:18"
+    />
+    <Code
+      code={require("!!raw-loader!./code/vdom.1.1.html").default}
+      lang="html"
+      focus="1:18"
+    />
+  </Step>
+  <Step>
+    <Code
+      code={require("!!raw-loader!./code/vdom.1.2.html").default}
+      lang="html"
+      focus="1:18"
+    />
+    <Code
+      code={require("!!raw-loader!./code/vdom.1.2.html").default}
+      lang="html"
+      focus="1:18"
+    />
+  </Step>
+</CodeSurferColumnLayout>
+
+<VDomBackground />
+
+---
+
+# Let's jump into some real code
