@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-export default ({todos}) => {
+export default ({todos, small}) => {
   return (
     <PageWrapper>
-      <Wrapper>
+      <Wrapper small={small}>
         <Title>My Todos</Title>
         {
           todos.map(todo => (
-            <Todo style={{textDecoration: todo.done ? 'line-through' : 'none'}}><Checkbox checked={todo.done} />{todo.text}</Todo>
+            <Todo small={small} style={{textDecoration: todo.done ? 'line-through' : 'none'}}><Checkbox checked={todo.done} />{todo.text}</Todo>
           ))
         }
       </Wrapper>
@@ -29,7 +29,7 @@ const Wrapper = styled('div')`
   flex-direction: column;
   background: #fff;
   border-radius: 1vw;
-  padding: 2vw;
+  padding: ${({small}) => small ? "1vw" : "2vw"};
 `
 
 const Title = styled('h1')`
@@ -51,6 +51,7 @@ const Todo = styled('div')`
   text-align: left;
   display: flex;
   align-items: center;
+  font-size: ${({small}) => small ? '1.2vw' : ''};
 `
 
 const Checkbox = styled('div')`
@@ -60,6 +61,7 @@ const Checkbox = styled('div')`
   border-radius: .2vw;
   margin-right: 1vw;
   position: relative;
+  flex: 0 0 auto;
   &::before{
     display: ${({checked}) => checked ? 'block' : 'none'};
     content: "";

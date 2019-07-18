@@ -21,9 +21,13 @@ import ShapesBG from './components/ShapesBG'
 
 ---
 
+<img src="https://timedotcom.files.wordpress.com/2015/09/1997.jpg" style={{maxHeight: "95vh", maxWidth: "95vw"}} />
+
+---
+
 <Notes> As web pages become more dynamic, interactive, and complex, several commmon problems arise</Notes>
 
-# Users expect web pages to be<br/><Hi>feature-rich</Hi>,<br/><Hi>fast</Hi>,<br/>and <Hi>highly dynamic</Hi>
+# Modern web users expect web pages to be<br/><Hi>feature-rich</Hi>, <Hi>fast</Hi>, and <Hi>highly dynamic</Hi>
 
 ---
 
@@ -50,6 +54,10 @@ import HistorySlide from './components/HistorySlide'
 
 ---
 
+# React is a <Hi>declarative</Hi> Javascript<br/>framework for building <Hi>user interfaces</Hi>.
+
+---
+
 # Automatic DOM updates (<Hi>virtual DOM</Hi>)
 
 <Appear>
@@ -58,12 +66,6 @@ import HistorySlide from './components/HistorySlide'
 # Declarative syntax (<Hi>JSX</Hi>)
 
 </Appear>
-
----
-
-<Big style={{transform: 'translateY(15%)'}}>State Managment</Big>
-
-<ShapesBG />
 
 ---
 
@@ -93,13 +95,13 @@ import HistorySlide from './components/HistorySlide'
 
 ---
 
-## That's an <Hi>impossible</Hi> number<br/>of possible states to account for<br/>using <Hi>traditional methods</Hi>
+## That's an <Hi>impossible</Hi> number<br/>of states to account for<br/>using <Hi>traditional methods</Hi>
 
 <img src="https://media.giphy.com/media/BmmfETghGOPrW/giphy.gif" style={{width: '30vw'}} />
 
 ---
 
-# How does <Hi>React</Hi> solve this problem?
+# How does <Hi>React</Hi> help solve this problem?
 
 <SplashScreen noText />
 
@@ -138,7 +140,7 @@ import HistorySlide from './components/HistorySlide'
 
 ---
 
-# React-powered user interfaces are a<br/><Hi>pure function</Hi> of the<br/><Hi>state</Hi> of your application
+# In React, your UI is a<br/><Hi>pure function</Hi> of the<br/><Hi>state</Hi> of your application
 
 ---
 
@@ -204,7 +206,7 @@ import PureFunctions from './examples/PureFunctions'
 
 import VDomBackground from './components/VDomBackground'
 
-<CodeSurferColumnLayout sizes={[1, 1]}>
+<CodeSurferColumnLayout sizes={[2, 2, 1]}>
   <Step>
     <Code
       code={require("!!raw-loader!./code/vdom.1.0.html").default}
@@ -214,6 +216,13 @@ import VDomBackground from './components/VDomBackground'
       code={require("!!raw-loader!./code/vdom.1.0.html").default}
       lang="html"
     />
+    <PureFunctions
+    small
+    todos={[
+      {text: "Hide the body", done: false},
+      {text: "Blackmail the witnesses", done: true},
+      {text: "Buy a new toaster", done: false}
+    ]} />
   </Step>
   <Step>
     <Code
@@ -226,6 +235,13 @@ import VDomBackground from './components/VDomBackground'
       lang="html"
       focus="1:14"
     />
+    <PureFunctions
+    small
+    todos={[
+      {text: "Hide the body", done: false},
+      {text: "Blackmail the witnesses", done: true},
+      {text: "Buy a new toaster", done: false}
+    ]} />
   </Step>
   <Step>
     <Code
@@ -238,6 +254,14 @@ import VDomBackground from './components/VDomBackground'
       lang="html"
       focus="1:18"
     />
+    <PureFunctions
+    small
+    todos={[
+      {text: "Hide the body", done: false},
+      {text: "Blackmail the witnesses", done: true},
+      {text: "Buy a new toaster", done: false},
+      {text: "Practice alibi", done: false}
+    ]} />
   </Step>
   <Step>
     <Code
@@ -250,6 +274,14 @@ import VDomBackground from './components/VDomBackground'
       lang="html"
       focus="1:18"
     />
+    <PureFunctions
+    small
+    todos={[
+      {text: "Hide the body", done: false},
+      {text: "Blackmail the witnesses", done: true},
+      {text: "Buy a new toaster", done: false},
+      {text: "Practice alibi", done: false}
+    ]} />
   </Step>
   <Step>
     <Code
@@ -262,6 +294,14 @@ import VDomBackground from './components/VDomBackground'
       lang="html"
       focus="1:18"
     />
+    <PureFunctions
+    small
+    todos={[
+      {text: "Hide the body", done: false},
+      {text: "Blackmail the witnesses", done: true},
+      {text: "Buy a new toaster", done: true},
+      {text: "Practice alibi", done: true}
+    ]} />
   </Step>
 </CodeSurferColumnLayout>
 
@@ -286,6 +326,6 @@ import VDomBackground from './components/VDomBackground'
 
 ---
 
-# Let's build an app
+<Big>Let's build an app</Big>
 
 <ShapesBG />

@@ -16,10 +16,10 @@ export default ({noText}) => (
       !noText &&
       <h1>Intro to <Hi>React JS</Hi></h1>
     }
-    {
+    {/* {
       !noText &&
       <Subtitle>Building UI's in the year 6000</Subtitle>
-    }
+    } */}
   </Wrapper>
 )
 

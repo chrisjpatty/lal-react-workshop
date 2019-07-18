@@ -16,7 +16,7 @@ const Wrapper = styled('div')`
   position: fixed;
   left: 0px;
   top: 0px;
-  width: 100%;
+  width: 80%;
   height: 100%;
 `
 
